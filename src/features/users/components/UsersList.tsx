@@ -1,5 +1,7 @@
-import { useAppDispatch, useAppSelector } from "@/hooks/useAppDispatch";
 import { useEffect } from "react";
+
+import { useAppDispatch, useAppSelector } from "@/store";
+
 import { fetchUsers } from "../usersSlice";
 import { UserCard } from "./UserCard";
 
@@ -8,7 +10,7 @@ export const UsersList = () => {
   const { data: users, loading, error } = useAppSelector((state) => state.users);
 
   useEffect(() => {
-    void dispatch(fetchUsers());
+    dispatch(fetchUsers());
   }, [dispatch]);
 
   if (loading) {

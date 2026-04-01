@@ -1,9 +1,9 @@
 import axios from "axios";
 
 import type { AxiosError } from "axios";
-
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 export const apiClient = axios.create({
-  baseURL: process.env.VITE_API_BASE_URL,
+  baseURL: VITE_API_BASE_URL,
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
